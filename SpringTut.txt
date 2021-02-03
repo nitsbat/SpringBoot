@@ -1,0 +1,53 @@
+D in SOLID principle stands for Dependency Inversion
+It states that the high level modules should not depend upon the low level modules. the decoupling of software modules should be there.
+For example in the below code,
+public class WindowsMachine {
+
+    private final StandardKeyboard keyboard;
+    private final Monitor monitor;
+
+    public WindowsMachine() {
+        monitor = new Monitor();
+        keyboard = new StandardKeyboard();
+    }
+
+}
+we have tightly coupled these three classes, Windows98Machine,Monitor and StandardKeyboard by calling new method. Now in future if we have suppose ComplexKeyboard
+which is a child class of StandardKeyboard and we have arise in that situation to use that keyboard for Windows Machine. We wont be able to do that as we have tightly
+coupled these. Hence we have to separate the creation of objects for this classes and just inject it into the WindowsMachine like below.
+public class WindowsMachine {
+
+    private final StandardKeyboard keyboard;
+    private final Monitor monitor;
+
+    public WindowsMachine(StandardKeyboard keyboard, Monitor monitor) {
+        this.monitor = monitor;
+        this.keyboard = keyboard;
+    }
+}
+
+this is known as Dependency Injection. When a class suppose Class A uses some functionality of class B, then it is said that A is dependent on B. But before we can
+use class B functionality , we have to create its instance and hence transfering the task of creating the object to someone else and directly using that 
+dependecy is called dependency injection.
+Let’s say we have a car class which contains various objects such as wheels, engine, etc.
+Here the car class is responsible for creating all the dependency objects.
+Now, what if we decide to ditch MRFWheels in the future and want to use Yokohama Wheels?
+We will need to recreate the car object with a new Yokohama dependency. But when using dependency injection (DI), we can change the Wheels at runtime (because dependencies can be injected at runtime rather than at compile time).
+
+So Spring framework is basically an application framework used for developing java application but can be used with extensions to develop web applications.
+It provides the Dependency Injection to the application.
+
+************** UNDERSTANDING SPRING BEAN FACTORY ****************************
+
+spring is actually called a container. A container of Beans. here beans can be referred as objects. so the role of conatiner is to create the object, handles its
+lifecycle, destroying it, and using its methods. 
+So if we say that class A has a dependency on class B and now in class A, for using class B we have to create a new object by calling "new ClassB()",
+so this new ClassB() will be done by the spring bean factory. Now spring bean factory can be seen as a class implementing the factory pattern, which means
+this class will be responsible of creating objects/beans for any class which ask for a dependecny object. but this bean factory must also have the information
+about the objects or beans right, so it take configurations from spring.xml file.
+
+
+
+
+
+
