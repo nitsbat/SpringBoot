@@ -59,7 +59,9 @@ or just do git checkout 366e9b74845b6b5697dd567026c6530e9400ce14
 
 ************** Constructor Injection *********
 
-
+by using properties tag in sprint.xml, we are using the setter of the class to put the value in the member variable
+but we can do the same by using constructor and it has more options.
+just checkout using command - git checkout 5532768699117b89e1788aa3b8e39c48e46b1907.
 
 
 

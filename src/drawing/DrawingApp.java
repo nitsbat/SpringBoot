@@ -26,8 +26,8 @@ public class DrawingApp {
             If we have member variables in the class , we can mention the value for them in the property field
             and used it through the bean factory.
          */
-        Triangle triangle = (Triangle) context.getBean("triangle");
-        triangle.draw();
+        Rectangle rectangle = (Rectangle) context.getBean("rectangle");
+        rectangle.draw();
 
         /*
             So Why use this much code for such a small instantiation. Its because in large projects,
