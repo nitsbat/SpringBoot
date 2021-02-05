@@ -2,6 +2,8 @@ package drawing;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
@@ -13,15 +15,21 @@ public class DrawingApp {
         there are many beans factory, but here we used the xml one which accepts the XML file consist of
         all available beans.
         */
-        BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
-
+//        BeanFactory factory = new XmlBeanFactory(new FileSystemResource("src/spring.xml"));
+        
+        //We can use ApplicationContext instead of BeanFactory. it is similar but has additional functionalities.
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         /*
-            In sring.xml when we define a bean we definitely give an id corresponding to a class.
+            In spring.xml when we define a bean we definitely give an id corresponding to a class.
             the id can be said as a key or reference to the corresponding class value.
             class is mandatory to give to tell the bean factory that while calling this id , this class
             instance should be created.
          */
-        Triangle triangle = (Triangle) factory.getBean("triangle");
+        /*
+            If we have member variables in the class , we can mention the value for them in the property field
+            and used it through the bean factory.
+         */
+        Triangle triangle = (Triangle) context.getBean("triangle");
         triangle.draw();
 
         /*
