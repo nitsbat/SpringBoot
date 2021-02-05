@@ -1,11 +1,7 @@
 package drawing;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.web.context.support.XmlWebApplicationContext;
 
 public class DrawingApp {
     public static void main(String[] args) {
@@ -16,14 +12,15 @@ public class DrawingApp {
         all available beans.
         */
 //        BeanFactory factory = new XmlBeanFactory(new FileSystemResource("src/spring.xml"));
-        
+
         //We can use ApplicationContext instead of BeanFactory. it is similar but has additional functionalities.
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         /*
             In spring.xml when we define a bean we definitely give an id corresponding to a class.
             the id can be said as a key or reference to the corresponding class value.
             class is mandatory to give to tell the bean factory that while calling this id , this class
-            instance should be created.
+            instance should be created. it is actually using the setter if we use property tag,
+            and uses constructor if we use constructor-arg.
          */
         /*
             If we have member variables in the class , we can mention the value for them in the property field

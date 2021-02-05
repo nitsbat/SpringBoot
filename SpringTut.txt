@@ -51,6 +51,14 @@ about the objects or beans right, so it take configurations from spring.xml file
 we can use BeanFactory interface to create beans. Refer DrawingApp present in D:\Tech and Projects\Learnings\Spring Framework\SpringBoot\src\drawing
 or just do git checkout b05a862360f17b37b6741dd5cfa603725eef427a
 
+************** Application Context and member variable or Property Injection *********
+
+we can use ApplicationContext instead of BeanFactory which is also an interface to create beans. It can be said as big brother of BeanFactory but also provide 
+aome additional functionalities.
+or just do git checkout 366e9b74845b6b5697dd567026c6530e9400ce14
+
+************** Constructor Injection *********
+
 
 
 
