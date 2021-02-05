@@ -46,6 +46,10 @@ so this new ClassB() will be done by the spring bean factory. Now spring bean fa
 this class will be responsible of creating objects/beans for any class which ask for a dependecny object. but this bean factory must also have the information
 about the objects or beans right, so it take configurations from spring.xml file.
 
+Instantiate and Using Bean FACTORY
+
+we can use BeanFactory interface to create beans. Refer DrawingApp present in D:\Tech and Projects\Learnings\Spring Framework\SpringBoot\src\drawing
+
 
 
 
