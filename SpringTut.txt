@@ -98,3 +98,14 @@ if we want to populate a list, spring provides the list tag and we can just use 
                 <ref bean="pointB"/>
             </list>
         </property>
+		
+************* AUTOWIRING In Spring *****************************
+
+Autowiring is a shotcut or a process of reducing the configuration given in the settings file i.e spring.xml
+It allows us to inject objects implicitly. i.e spring uses getter and setter internally to populate that object.
+Autowiring should not be used with string and primitive data types, it works greatly with the reference type.
+Three types of autowiring is possible : 
+byName	The byName mode injects the object dependency according to name of the bean. In such case, property name and bean name must be same. It internally calls setter method.
+byType	The byType mode injects the object dependency according to type. So property name and bean name can be different. It internally calls setter method.
+constructor	The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters.
+
