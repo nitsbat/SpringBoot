@@ -107,5 +107,6 @@ Autowiring should not be used with string and primitive data types, it works gre
 Three types of autowiring is possible : 
 byName	The byName mode injects the object dependency according to name of the bean. In such case, property name and bean name must be same. It internally calls setter method.
 byType	The byType mode injects the object dependency according to type. So property name and bean name can be different. It internally calls setter method.
+		It is basically useful when there will be only single member variable of a particular primitive or reference data type.
 constructor	The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters.
 
