@@ -1,11 +1,11 @@
 package drawing;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 public class Rectangle {
     private Point point1;
+
+    public Rectangle(Point point1, Point point2, Point point3) {
+        this.point1 = point1;
+    }
 
     public Point getPoint1() {
         return point1;
@@ -15,8 +15,7 @@ public class Rectangle {
         this.point1 = point1;
     }
 
-
     public void draw() {
-        System.out.println("Point A : (x=" + getPoint1().getX() + ",y=" + getPoint1().getY());
+        System.out.println("Point A : (x=" + getPoint1().getX() + ",y=" + getPoint1().getY() + ")");
     }
 }
