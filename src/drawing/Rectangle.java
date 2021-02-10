@@ -1,5 +1,10 @@
 package drawing;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Rectangle {
     private Point point1;
     private Point point2;
@@ -36,6 +41,11 @@ public class Rectangle {
 
     public void setPoint4(Point point4) {
         this.point4 = point4;
+        Map<Integer, ArrayList<Integer>> map = new HashMap<>();
+        for (Map.Entry<Integer, ArrayList<Integer>> entry : map.entrySet()) {
+            ArrayList<Integer> value = entry.getValue();
+            System.out.println(value.get(0));
+        }
     }
 
     public void draw() {

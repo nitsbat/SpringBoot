@@ -63,7 +63,26 @@ by using properties tag in sprint.xml, we are using the setter of the class to p
 but we can do the same by using constructor and it has more options.
 just checkout using command - git checkout 5532768699117b89e1788aa3b8e39c48e46b1907.
 
+***************** Objects Injection ******************** 
 
+we can inject objects in the same way, but we have to make a bean for that particular object class.
+Then we have to inject that particular bean using the name as same of member variable and instead of value, we can give "ref" of previously class
+object bean. 
+refer - https://www.youtube.com/watch?v=g15RcFyEcrk&list=PLC97BDEFDCDD169D7&index=7
+
+**************** Inner Beans & aliases**************************
+
+Inner bean is actually a bean inside a bean which generally represents when there is a bean which needs to be isolated and should not be a common bean.
+e.g - in triabgle example Point zero can be a common bean as it is same for any shape(rectangle,circle,etc) nut the the other two points, Point A and Point B
+are separate and is specific to triangle so we can insert them inside the triangle bean only.
+so the bean which is specific to a parent bean can be said as nested bean. No performance issue is there , in both cases the scenario is same,
+its just for the naming to consolidate the bean with the names.
+
+We can also give aliases to a specific bean by using alias="triangle-alias", so we can use this aliases in place of bean id's. 
+the alias can be given directly in the bean definition by using name="triangle-name".
+So its possible to have many aliases for a particular bean, But its always a good practice to use the bean ids instead of aliases cozz we can have unique id for a bean while aliases can be many/repeated.
+
+so now in the ref tag, the value can be either name, bean id or alias. so to restrict this we can just use the idref which means the value in ref tag can only be id.
 
 
 
