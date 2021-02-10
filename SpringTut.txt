@@ -85,5 +85,16 @@ So its possible to have many aliases for a particular bean, But its always a goo
 so now in the ref tag, the value can be either name, bean id or alias. so to restrict this we can just use the idref which means the value in ref tag can only be id.
 
 
+**************** Initialising Collections (List,Map,Set)**************************
 
-
+if we want to populate a list, spring provides the list tag and we can just use in the property
+ <property name="list">
+            <list>
+                <bean id="pointC" class="drawing.Point">
+                    <property name="x" value="100"/>
+                    <property name="y" value="100"/>
+                </bean>
+                <ref bean="pointA"/>
+                <ref bean="pointB"/>
+            </list>
+        </property>
