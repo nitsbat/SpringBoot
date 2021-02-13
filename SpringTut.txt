@@ -110,3 +110,29 @@ byType	The byType mode injects the object dependency according to type. So prope
 		It is basically useful when there will be only single member variable of a particular primitive or reference data type.
 constructor	The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters.
 
+*************** Spring Bean scopes ***********************************
+
+we know that spring is providing us the beans by instantiating and configuring them in the file with our given values.
+we have objects/beans in the spring container which means that whenever an object can reference another object by providing the id and spring will give an 
+instance. This is done by the Spring Bean factory.
+
+Now by default what happens in Spring BEan factory is that when applicationContext/BeanFactory is initialised , it will read the spring.xml and create all the 
+beans present in that xml file. This is done before we do the getBean() operation. Hence after all the bean initialised, when any object will getBean() from 
+the applicationContext it will provide the instantiated bean to the object. 
+
+There are two bean scopes in the Spring : 
+
+1) Singleton - Single bean per Spring container. All the thing happened as mentioned above by default.
+			   It means that whenever the application context will initialise all the beans from spring.xml, it will create only instance per bean
+			   and despite of having more than one call to that bean i.e getBean(), it gonna return only that instantiated bean everytime.
+			   The default scope is singleton if we do not configure it.
+			   Singleton here means only one instance of a bean in a spring container.
+			   Different spring containers can have another single instance of that bean.
+			   So one instance per bean.
+			   
+2) Prototype - So if we give prototype to spring, so whenever we getBean() from the applicationContext, the new bean created with every request and reference.
+			   By default no bean is generated when we create applicationContext and new bean is created only when we do getBean(). not at the starting initialisation of the applicationContext.
+			   
+Similarly Spring has Web-aware context bean scope in which Every new bean is created per servlet request. i.e for every Api request or for every new session.
+
+
