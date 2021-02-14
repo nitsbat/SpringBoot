@@ -135,4 +135,18 @@ There are two bean scopes in the Spring :
 			   
 Similarly Spring has Web-aware context bean scope in which Every new bean is created per servlet request. i.e for every Api request or for every new session.
 
+*************** Using ApplicationContextAware interface *****************************
 
+There are some cases in spring when you need to access the applicationContext inside a bean. e.g if your bean needs to look for other beans, it will need an 
+applicationcontext and hence the context needs to be injected. hence you can do getBean() inside a bean without making a new ApplicationContext.
+Spring provides an ApplicationContextAware interface that allows beans access to the ApplicationContext. This interface provides a single setApplicationContext method. In this you can inject or set the applicationcontext. As soon  as the particular bean is created the current context will also get injected.
+The preceding setApplicationContext() is a callback that supplies the context of the bean.
+
+suppose in triangle class only i want a bean of Point class or some file resource bean then there will be no way to provide context in that triangle bean.
+and we dont want to create a new application context for getting a new bean. Hence we have to inject the context in some way and as a result we have to use the
+interface.So whenever a new bean is created of a particular class, the spring automatically assigns the context in that bean and from there we can access any bean using getBEan().
+
+
+Similarly there is this BeanNameAware Interface which is implemented by beans that need access to its name defined in the Spring container.
+This interface provides the setBeanName() method.
+The preceding setBeanName() is a callback that supplies the name of the bean.
