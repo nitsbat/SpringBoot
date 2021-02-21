@@ -50,7 +50,7 @@
             </list>
         </property>
     </bean>
-    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract">
+    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract" init-method="init" destroy-method="destroy">
         <property name="points">
             <list merge="true">
                 <ref bean="pointB"/>

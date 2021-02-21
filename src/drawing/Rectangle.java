@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContextAware;
 
 import java.util.List;
 
-public class Rectangle implements ApplicationContextAware, InitializingBean, DisposableBean {
+public class Rectangle implements ApplicationContextAware {
     private List<Point> points;
 
     private ApplicationContext context;
@@ -38,13 +38,11 @@ public class Rectangle implements ApplicationContextAware, InitializingBean, Dis
         this.context = applicationContext;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("Initialise before a bean is created");
+    public void init() {
+        System.out.println("Beans created");
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("Bean destroyed");
+    public void destroy() {
+        System.out.println("Beans destroyed");
     }
 }
