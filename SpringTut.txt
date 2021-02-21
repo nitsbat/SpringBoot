@@ -150,3 +150,9 @@ interface.So whenever a new bean is created of a particular class, the spring au
 Similarly there is this BeanNameAware Interface which is implemented by beans that need access to its name defined in the Spring container.
 This interface provides the setBeanName() method.
 The preceding setBeanName() is a callback that supplies the name of the bean.
+
+**************************** Bean Definition Inheritance ************************************
+sometimes we have to use the beans which are repeatedly defined. So there is strategy of inheriting bean from the parent bean. This result in getting the 
+properties of the parent bean and also add our functionality maybe by overriding the parent bean property.
+Special property comes when bean contains the list/set. we have the ability of merging the parent bean property(list/set) with the inheritng one.
+

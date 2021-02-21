@@ -6,9 +6,19 @@ import org.springframework.context.ApplicationContextAware;
 
 public class Rectangle implements ApplicationContextAware {
     private Point point1;
+    private Point point2;
+
     private ApplicationContext context;
 
     Rectangle() {
+    }
+
+    public Point getPoint2() {
+        return point2;
+    }
+
+    public void setPoint2(Point point2) {
+        this.point2 = point2;
     }
 
     public Rectangle(Point point1) {
@@ -24,7 +34,6 @@ public class Rectangle implements ApplicationContextAware {
     }
 
     public void draw() {
-        Point point2 = (Point) context.getBean("point3");
         System.out.println("Point A : (x=" + getPoint1().getX() + ",y=" + getPoint1().getY() + ")");
         System.out.println("Point B : (x=" + point2.getX() + ",y=" + point2.getY() + ")");
     }

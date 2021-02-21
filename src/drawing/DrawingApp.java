@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawingApp {
     public static void main(String[] args) {
+
         /*
         For drawing a triangle we can instantiate triangle object like new Triangle() and then draw it.
         so to replace this 'new Triangle()', we can use bean from the spring bean factory
@@ -26,7 +27,7 @@ public class DrawingApp {
             If we have member variables in the class , we can mention the value for them in the property field
             and used it through the bean factory.
          */
-        Rectangle rectangle = (Rectangle) context.getBean("rectangle");
+        Rectangle rectangle = (Rectangle) context.getBean("rectangle1");
         rectangle.draw();
 
         /*
