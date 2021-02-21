@@ -172,7 +172,15 @@ as soon as the program ends.
 Now initially if we want to do something before the bean creates we can just initialise it using InitializingBean interface and then 
 overriding the afterPropertiesSet() method to do something.
 and for doing something before destroying a bean will be by using DisposableBean and override destroy method.
+But the disadvantage is that we need to implement two particular interface and it is dependent on spring,
+No dependencies should be there on concrete classes.
 
+So to avoid this we will use in-built argument in bean decalaration and just pass the method as parameter.
+the method needs to be implement in that class (of particular bean).
+
+Now if we have any standard or functionality to use the init and destroy method for all the beans , then we dont have to define the init and destroy for all the beans . instead we can just define these two inbuilt methods at global level.
+So before initialising and destroying any bean at global level it will search for these method in the pojo or concrete classes.
+Now also if we define the creating/destroying by both the methods explained above, the Initialising/Disposable interface will take priority.
 
 
 
