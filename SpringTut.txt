@@ -155,4 +155,25 @@ The preceding setBeanName() is a callback that supplies the name of the bean.
 sometimes we have to use the beans which are repeatedly defined. So there is strategy of inheriting bean from the parent bean. This result in getting the 
 properties of the parent bean and also add our functionality maybe by overriding the parent bean property.
 Special property comes when bean contains the list/set. we have the ability of merging the parent bean property(list/set) with the inheritng one.
+<list merge="true">
+
+Also if we just want a simple more abstract of creating bean definition inheritance. we can just make that paritcular parent bean as abstract.
+By making a bean abstract the spring doesn't make a bean for that particular bean id. It will be just used for reference and inheritance.
+
+************************ LifeCycle Callbacks **************************
+
+Spring also provides the callbacks ethod before initialising a bean and also after destroying the bean.
+so the methods during initialisation will be sent a callback method to the bean creation.
+
+So before seeing the method lets just see how the bean is destroyed. cozz bean are not destroyed if we make them through ApplicationContext.
+We have to use AbstractApplicationContext. so using this we can close the context and detroy all beans.
+If we use context.registerShutdownHook();, it will close the context and will give a shutdown hook to the context. It will destroy all the beans 
+as soon as the program ends.
+Now initially if we want to do something before the bean creates we can just initialise it using InitializingBean interface and then 
+overriding the afterPropertiesSet() method to do something.
+and for doing something before destroying a bean will be by using DisposableBean and override destroy method.
+
+
+
+
 

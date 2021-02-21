@@ -1,6 +1,8 @@
 package drawing;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawingApp {
@@ -15,7 +17,8 @@ public class DrawingApp {
 //        BeanFactory factory = new XmlBeanFactory(new FileSystemResource("src/spring.xml"));
 
         //We can use ApplicationContext instead of BeanFactory. it is similar but has additional functionalities.
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        AbstractApplicationContext context =  new ClassPathXmlApplicationContext("spring.xml");
+        context.registerShutdownHook();
         /*
             In spring.xml when we define a bean we definitely give an id corresponding to a class.
             the id can be said as a key or reference to the corresponding class value.
