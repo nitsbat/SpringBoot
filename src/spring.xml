@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    <bean id="triangle" class="drawing.Triangle" scope="prototype">
+        <!--        <property name="type" value="Equilateral"></property>-->
+        <!--        <constructor-arg type="java.lang.String" value="Equilateral"></constructor-arg>-->
+        <!--        <constructor-arg type="int" value="30"></constructor-arg>-->
+        <constructor-arg index="0" value="Equilateral"></constructor-arg>
+        <constructor-arg index="1" value="30"></constructor-arg>
+    </bean>
+
+    <bean id="rectangle" class="drawing.Rectangle" name="rect-angle" autowire="byName">
+        <!--        <property name="point1" ref="point1">-->
+        <!--        </property>-->
+        <!--        <property name="point2" ref="pointB"/>-->
+        <!--        <property name="list">-->
+        <!--            <list>-->
+        <!--                <bean id="pointC" class="drawing.Point">-->
+        <!--                    <property name="x" value="100"/>-->
+        <!--                    <property name="y" value="100"/>-->
+        <!--                </bean>-->
+        <!--                <ref bean="pointA"/>-->
+        <!--                <ref bean="pointB"/>-->
+        <!--            </list>-->
+        <!--        </property>-->
+        <!--        &lt;!&ndash;        suppose point 3 and point 4 are isolated points and hence we will make them inner beans&ndash;&gt;-->
+        <property name="point1" ref="point1">
+        </property>
+        <!--        <property name="point4">-->
+        <!--            <bean id="pointD" class="drawing.Point">-->
+        <!--                <property name="x" value="20"/>-->
+        <!--                <property name="y" value="20"/>-->
+        <!--            </bean>-->
+        <!--        </property>-->
+
+
+    </bean>
+
+<!--    the "recatngle1" bean is the child bean of the rectangle parent bean and hence will be inheriting-->
+<!--    the property "point1" automatically-->
+
+    <bean id="rectangleAbstract" class="drawing.Rectangle">
+        <property name="point1" ref="point1" />
+    </bean>
+    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract">
+        <property name="point2" ref="point2"></property>
+    </bean>
+    <!--    so if we have given autowire by names so if the bean id has same names as of member variable then it will inject
+            if we have given it byType so irrespective of property name if the type is matching and only single
+            variable of that type is presnt in the class then it will automatically inject.
+            constructor autowire is same as name but internally uses constructor instead os setters.-->
+    <!--    <bean id="point1" class="drawing.Point" name="point-a">-->
+    <!--        <property name="x" value="0"/>-->
+    <!--        <property name="y" value="0"/>-->
+    <!--    </bean>-->
+    <bean id="point1" class="drawing.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="20"/>
+    </bean>
+    <bean id="point2" class="drawing.Point">
+        <property name="x" value="05"/>
+        <property name="y" value="025"/>
+    </bean>
+    <!--    <bean id="point4" class="drawing.Point">-->
+    <!--        <property name="x" value="15"/>-->
+    <!--        <property name="y" value="5"/>-->
+    <!--    </bean>-->
+
+    <alias name="rectangle" alias="nitin-rectangle"/>
+</beans>
