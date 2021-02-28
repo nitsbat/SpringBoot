@@ -183,5 +183,8 @@ So before initialising and destroying any bean at global level it will search fo
 Now also if we define the creating/destroying by both the methods explained above, the Initialising/Disposable interface will take priority.
 
 
+************************** BEAN POST PROCESSOR **********************
 
-
+They are the classes that tells spring to do something after bean initialisation. it is used to extend the functionality of bean in spring.
+1) The single method runs for every bean intialised no matter how many types of beans we have.
+2) The BeanPostPRocessor is a separte class as we will have a same method to run after beans intialisation. 

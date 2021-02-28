@@ -2,7 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
-<beans default-init-method="init" default-destroy-method="destroy">
+<beans>
     <bean id="triangle" class="drawing.Triangle" scope="prototype">
         <!--        <property name="type" value="Equilateral"></property>-->
         <!--        <constructor-arg type="java.lang.String" value="Equilateral"></constructor-arg>-->
@@ -50,7 +50,7 @@
             </list>
         </property>
     </bean>
-    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract" >
+    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract">
         <property name="points">
             <list merge="true">
                 <ref bean="pointB"/>
@@ -77,6 +77,6 @@
     <!--        <property name="x" value="15"/>-->
     <!--        <property name="y" value="5"/>-->
     <!--    </bean>-->
-
+    <bean class="drawing.DisplayNameBeanPostProcessor"/>
     <alias name="rectangle" alias="nitin-rectangle"/>
 </beans>
