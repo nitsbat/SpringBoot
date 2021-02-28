@@ -70,13 +70,15 @@
         <property name="y" value="20"/>
     </bean>
     <bean id="pointB" class="drawing.Point">
-        <property name="x" value="05"/>
-        <property name="y" value="025"/>
+        <property name="x" value="${Xvalue}"/>
+        <property name="y" value="${Yvalue}"/>
     </bean>
     <!--    <bean id="point4" class="drawing.Point">-->
     <!--        <property name="x" value="15"/>-->
     <!--        <property name="y" value="5"/>-->
     <!--    </bean>-->
-    <bean class="drawing.MyBeanFactoryPostProcessor"/>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="properties.config"/>
+    </bean>
     <alias name="rectangle" alias="nitin-rectangle"/>
 </beans>

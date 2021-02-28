@@ -196,3 +196,7 @@ Remember that applicationContext is also a bean factory.
 so if we have a bean factory post processor, then first the bean factory post processor is called and then bean factory(ApplicationContext) is initialised
 and then all the singletons beans are created.
 
+One example of is PropertyPlaceHolder Configurer.
+It is the spring made BEAN FACTORY POST PROCESSOR. and it is used for example if you want to assign the numeric or direct values of your spring.xml from
+a properties file, i.e to get the hardcore values from some configuration file.
+
