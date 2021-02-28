@@ -77,6 +77,6 @@
     <!--        <property name="x" value="15"/>-->
     <!--        <property name="y" value="5"/>-->
     <!--    </bean>-->
-    <bean class="drawing.DisplayNameBeanPostProcessor"/>
+    <bean class="drawing.MyBeanFactoryPostProcessor"/>
     <alias name="rectangle" alias="nitin-rectangle"/>
 </beans>

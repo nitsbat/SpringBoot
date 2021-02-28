@@ -185,6 +185,14 @@ Now also if we define the creating/destroying by both the methods explained abov
 
 ************************** BEAN POST PROCESSOR **********************
 
-They are the classes that tells spring to do something after bean initialisation. it is used to extend the functionality of bean in spring.
+They are the classes that tells spring to do something after bean initialisation. it is used to extend the functionality of beans in spring.
 1) The single method runs for every bean intialised no matter how many types of beans we have.
-2) The BeanPostPRocessor is a separte class as we will have a same method to run after beans intialisation. 
+2) The BeanPostPRocessor is a separte class as we will have a same method to run after beans intialisation.
+
+git checkout 2ebd1684
+
+BEAN FACTORY POST PROCESSOR.
+Remember that applicationContext is also a bean factory. 
+so if we have a bean factory post processor, then first the bean factory post processor is called and then bean factory(ApplicationContext) is initialised
+and then all the singletons beans are created.
+
