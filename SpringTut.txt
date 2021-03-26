@@ -202,3 +202,8 @@ a properties file, i.e to get the hardcore values from some configuration file.
 
 Just check the example in project how to use this processor and placeholder.
 git checkout d2dc27c0
+
+****************************** CODING TO INTERFACES ***********************************
+
+coding to interfaces means when we are doing getBean() and just type casting into the return object. Instead of that class object we shoud use
+interface.so that there will be abstraction at that point.

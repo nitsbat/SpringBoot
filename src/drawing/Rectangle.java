@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContextAware;
 
 import java.util.List;
 
-public class Rectangle implements ApplicationContextAware {
+public class Rectangle implements ApplicationContextAware,Shape {
     private List<Point> points;
 
     private ApplicationContext context;
