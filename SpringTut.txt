@@ -227,7 +227,9 @@ Also like @Required annotation, @Autowire annotation also requires to call a pos
 if more than two properties are related to the same class,
 spring first sees the type of all the beans, if there are more than two , then it will check whether the id name is matching
 the member variable name, and is that also is same/different then we can distinguish the bean using @qualifier and give a qualifier tag giving
-the name same as that of the annotation.
+the name same as that of the annotation. 
+
+Remember that you need to add the xml namespace also.
 
 
 
