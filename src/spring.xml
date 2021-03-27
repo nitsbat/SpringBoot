@@ -77,6 +77,17 @@
     <!--        <property name="x" value="15"/>-->
     <!--        <property name="y" value="5"/>-->
     <!--    </bean>-->
+
+<!--   when you will comment the property , the bean will be created but when it will be accesses and-->
+<!--    its property value will be used, at that time it will throw null pointer exception.-->
+    <bean id="circle" class="drawing.Circle">
+<!--        <property name="center" ref="pointA"></property>-->
+    </bean>
+
+<!--    this is the postProcessor class used when giving any @Required annotation-->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+
+
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" value="properties.config"/>
     </bean>

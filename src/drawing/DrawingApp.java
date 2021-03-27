@@ -30,7 +30,7 @@ public class DrawingApp {
             If we have member variables in the class , we can mention the value for them in the property field
             and used it through the bean factory.
          */
-        Shape rectangle = (Shape) context.getBean("rectangle1");
+        Shape rectangle = (Shape) context.getBean("circle");
         rectangle.draw();
 
         /*

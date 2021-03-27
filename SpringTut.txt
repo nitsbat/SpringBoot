@@ -207,3 +207,15 @@ git checkout d2dc27c0
 
 coding to interfaces means when we are doing getBean() and just type casting into the return object. Instead of that class object we shoud use
 interface.so that there will be abstraction at that point.
+
+**************************  Introduction to Annotations and the Required Annotation **************
+
+Spring provide many annotations to give functionality.
+One such is Required annotation. suppose if we are creating a bean and we didn't provide the value to its variable or property, then
+what happen will be like at runtime when spring comes to create that bean with that propery it will throw the nullPointer exception.
+and that too the excpetion comes when the method using that variable will be used. I simple application its very simple but in complex situations where that method is used by 100 classes it would be difficult to find out which class method throws that exception.
+as a result we as a programmer wants this exception to catch at the beginning during initialisation of bean or when contextAware is 
+created.
+Hence we can use the @Required annotation to the setter of that member variable and initiate the postProcessor.
+why postprocessor bcoz spring actually will check that if that variable is having value during the postprocessing.
+
