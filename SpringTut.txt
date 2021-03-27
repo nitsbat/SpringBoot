@@ -239,5 +239,5 @@ there are some standard annotations.
 			  just give value and create a bean with the same bean id. and if value not given , it gonna see if the name of 
 			  member variable is same to any of the bean id. 
 
-
+Now we know that how to do something befor or after creating a bean. this can be done using init/destroy interfaces or use the user define function while creating a bean. but we can do this directly through the @PostConstruct and @PreDestruct annotations also.
 
