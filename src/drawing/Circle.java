@@ -1,6 +1,6 @@
 package drawing;
 
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Circle implements Shape {
 
@@ -10,7 +10,7 @@ public class Circle implements Shape {
         return center;
     }
 
-    @Required
+    @Autowired
     public void setCenter(Point center) {
         this.center = center;
     }

@@ -39,24 +39,24 @@
     <!--    the "recatngle1" bean is the child bean of the rectangle parent bean and hence will be inheriting-->
     <!--    the property "point1" automatically-->
 
-    <bean id="rectangleAbstract" class="drawing.Rectangle">
-        <property name="points">
-            <list>
-                <bean id="pointC" class="drawing.Point">
-                    <property name="x" value="100"/>
-                    <property name="y" value="100"/>
-                </bean>
-                <ref bean="pointA"/>
-            </list>
-        </property>
-    </bean>
-    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract">
-        <property name="points">
-            <list merge="true">
-                <ref bean="pointB"/>
-            </list>
-        </property>
-    </bean>
+<!--    <bean id="rectangleAbstract" class="drawing.Rectangle">-->
+<!--        <property name="points">-->
+<!--            <list>-->
+<!--                <bean id="pointC" class="drawing.Point">-->
+<!--                    <property name="x" value="100"/>-->
+<!--                    <property name="y" value="100"/>-->
+<!--                </bean>-->
+<!--                <ref bean="pointA"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract">-->
+<!--        <property name="points">-->
+<!--            <list merge="true">-->
+<!--                <ref bean="pointB"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
     <!--    so if we have given autowire by names so if the bean id has same names as of member variable then it will inject
             if we have given it byType so irrespective of property name if the type is matching and only single
             variable of that type is presnt in the class then it will automatically inject.
@@ -65,7 +65,7 @@
     <!--        <property name="x" value="0"/>-->
     <!--        <property name="y" value="0"/>-->
     <!--    </bean>-->
-    <bean id="pointA" class="drawing.Point">
+    <bean id="center" class="drawing.Point">
         <property name="x" value="0"/>
         <property name="y" value="20"/>
     </bean>
@@ -85,8 +85,9 @@
     </bean>
 
 <!--    this is the postProcessor class used when giving any @Required annotation-->
-    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+<!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />-->
 
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" value="properties.config"/>

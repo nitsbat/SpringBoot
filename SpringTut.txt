@@ -219,3 +219,15 @@ created.
 Hence we can use the @Required annotation to the setter of that member variable and initiate the postProcessor.
 why postprocessor bcoz spring actually will check that if that variable is having value during the postprocessing.
 
+*********  The Autowired Annotation *******************
+
+we know what autowire is, it automatically autowires the bean either through its id or type.
+we can autowire using annotation also, by giving the annotation to the setter of the member variable.
+Also like @Required annotation, @Autowire annotation also requires to call a postProcessor. 
+if more than two properties are related to the same class,
+spring first sees the type of all the beans, if there are more than two , then it will check whether the id name is matching
+the member variable name, and is that also is same/different then we can distinguish the bean using @qualifier and give a qualifier tag giving
+the name same as that of the annotation.
+
+
+
