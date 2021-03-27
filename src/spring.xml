@@ -70,7 +70,6 @@
     <!--        <property name="y" value="0"/>-->
     <!--    </bean>-->
     <bean id="pointA" class="drawing.Point">
-        <qualifier value="circleRelated" />
         <property name="x" value="0"/>
         <property name="y" value="20"/>
     </bean>
@@ -78,10 +77,10 @@
         <property name="x" value="${Xvalue}"/>
         <property name="y" value="${Yvalue}"/>
     </bean>
-    <!--    <bean id="point4" class="drawing.Point">-->
-    <!--        <property name="x" value="15"/>-->
-    <!--        <property name="y" value="5"/>-->
-    <!--    </bean>-->
+        <bean id="point4" class="drawing.Point">
+            <property name="x" value="15"/>
+            <property name="y" value="5"/>
+        </bean>
 
 <!--   when you will comment the property , the bean will be created but when it will be accesses and-->
 <!--    its property value will be used, at that time it will throw null pointer exception.-->

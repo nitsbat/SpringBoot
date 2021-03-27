@@ -1,7 +1,6 @@
 package drawing;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.Resource;
 
 public class Circle implements Shape {
 
@@ -11,8 +10,7 @@ public class Circle implements Shape {
         return center;
     }
 
-    @Autowired
-    @Qualifier(value = "circleRelated")
+    @Resource(name = "pointB")
     public void setCenter(Point center) {
         this.center = center;
     }

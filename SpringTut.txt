@@ -229,7 +229,15 @@ spring first sees the type of all the beans, if there are more than two , then i
 the member variable name, and is that also is same/different then we can distinguish the bean using @qualifier and give a qualifier tag giving
 the name same as that of the annotation. 
 
-Remember that you need to add the xml namespace also.
+Remember that you need to add the xml namespace also. otherwise it will say that qualifier tag is not a valid tag.
+
+***************  Some JSR-250 Annotations ******************
+
+there are some standard annotations.
+
+@Resourcce  - not specific to Spring, its from javax library. This annotation does dependency injection by name. 
+			  just give value and create a bean with the same bean id. and if value not given , it gonna see if the name of 
+			  member variable is same to any of the bean id. 
 
 
 
