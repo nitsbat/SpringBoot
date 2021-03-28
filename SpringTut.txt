@@ -251,3 +251,16 @@ similarly we have stereotype annotations like
 @Service - it works in a similar manner like component, makes the bean of that class but it is specific if we have a service class, gives a             good 	    nomenclature. component is sort of generic annotation for creating bean.
 @Controller - similar to the controller class of MVC.
 @Repository - similar to a data layer.
+
+*********************  Using MessageSource To Get Text From Property Files ***********
+
+one of the differences between using an applicationContext instead of bean factory is we can use the messageResource in applicationContext.
+messageResource here means if we want to show some messages in logger exception or to display, spring can directly configure it using message 
+bundle class. the message bundle is basically a key value in which value is the message. this key value can be store in properties file.
+so we can use applicationContext to retrieve this message.
+Now if we want the message to be displayed in some other class where Applicationcontext is not there, then what we can do is this message source 
+comes from the message source interface and hence we can just make a memeber variable and do dependency injection of messageSource
+and can use the messages.
+For having used the member variable as parameters in the message, just use the placeholder. 
+
+

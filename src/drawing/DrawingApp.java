@@ -32,7 +32,7 @@ public class DrawingApp {
          */
         Shape rectangle = (Shape) context.getBean("circle");
         rectangle.draw();
-
+//        System.out.println(context.getMessage("starting", null, "Exception", null));
         /*
             So Why use this much code for such a small instantiation. Its because in large projects,
             the class can be very much complex and the object made will be also complex with lot of parameters

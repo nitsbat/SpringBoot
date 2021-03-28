@@ -1,9 +1,8 @@
 package drawing;
 
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -13,6 +12,9 @@ import javax.annotation.Resource;
 public class Circle implements Shape {
 
     private Point center;
+
+    @Autowired
+    private MessageSource messageSource;
 
     public Point getCenter() {
         return center;
@@ -25,16 +27,27 @@ public class Circle implements Shape {
 
     @Override
     public void draw() {
-        System.out.println("Circle center is : X=" + center.getX() + " , Y=" + center.getY());
+        System.out.println(messageSource.getMessage("starting", null, "Exception", null));
+        System.out.println(messageSource.getMessage("drawing.circle",
+                new Object[]{center.getX(),center.getY()}, "circle default", null));
+        System.out.println(messageSource.getMessage("circle.draw", null, "Circle", null));
     }
 
     @PostConstruct
-    public void init(){
+    public void init() {
         System.out.println(" Initialising bean ");
     }
 
     @PreDestroy
-    public void destroy(){
+    public void destroy() {
         System.out.println(" Destroying bean ");
+    }
+
+    public MessageSource getMessageSource() {
+        return messageSource;
+    }
+
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
     }
 }
