@@ -7,6 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     <context:annotation-config/>
+    <context:component-scan base-package="drawing" />
     <bean id="triangle" class="drawing.Triangle" scope="prototype">
         <!--        <property name="type" value="Equilateral"></property>-->
         <!--        <constructor-arg type="java.lang.String" value="Equilateral"></constructor-arg>-->
@@ -84,9 +85,9 @@
 
 <!--   when you will comment the property , the bean will be created but when it will be accesses and-->
 <!--    its property value will be used, at that time it will throw null pointer exception.-->
-    <bean id="circle" class="drawing.Circle">
+<!--    <bean id="circle" class="drawing.Circle">-->
 <!--        <property name="center" ref="pointA"></property>-->
-    </bean>
+<!--    </bean>-->
 
 <!--    this is the postProcessor class used when giving any @Required annotation-->
 <!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />-->

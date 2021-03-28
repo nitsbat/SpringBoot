@@ -241,3 +241,13 @@ there are some standard annotations.
 
 Now we know that how to do something befor or after creating a bean. this can be done using init/destroy interfaces or use the user define function while creating a bean. but we can do this directly through the @PostConstruct and @PreDestruct annotations also.
 
+****************** Component and Stereotype Annotations ******************
+
+there is one annotation for creating the bean, there is no need of creating a bean of that class in spring.xml
+the annotation is @component. but the disadvantage is that everytime there will be only that bean like only one instance will be created.
+But we can make the bean with this annotation. but we also have to give one config i.e componenet config. what this config will do is that
+other than spring.xml it will also search the classes in given packages for the bean i.e @component annotation.
+similarly we have stereotype annotations like 
+@Service - it works in a similar manner like component, makes the bean of that class but it is specific if we have a service class, gives a             good 	    nomenclature. component is sort of generic annotation for creating bean.
+@Controller - similar to the controller class of MVC.
+@Repository - similar to a data layer.
