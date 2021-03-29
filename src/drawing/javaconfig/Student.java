@@ -1,11 +1,17 @@
 package drawing.javaconfig;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
 
     private Branch branch;
 
-    public Student(Branch branch) {
+    private String name;
+
+    public Student(Branch branch, String name) {
         this.branch = branch;
+        this.name = name;
     }
 
     public Branch getBranch() {
@@ -18,6 +24,6 @@ public class Student {
 
     public void study() {
         this.branch.showBranch();
-        System.out.println("Student is Studying");
+        System.out.println(name + " is Studying");
     }
 }

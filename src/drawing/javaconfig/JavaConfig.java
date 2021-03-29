@@ -1,10 +1,13 @@
 package drawing.javaconfig;
 
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = {"drawing.javaconfig"})
 public class JavaConfig {
 
     @Bean
@@ -12,8 +15,8 @@ public class JavaConfig {
         return new Branch();
     }
 
-    @Bean(name = "studentBean")
-    public Student getStudent() {
-        return new Student(getBranch());
+    @Bean
+    public String getName() {
+        return "Nitin";
     }
 }
