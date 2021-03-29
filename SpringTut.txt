@@ -316,3 +316,7 @@ Part 2 - All the configuration in spring.xml can be moved to a java class and ju
 		 When we have to configure the base packages for that internal component searching tag, we can use the @ComponentScan annotation.
 		 Also if we observe in our main we were sing classXMLcontext for making application context but now we dont have spring.xml.
 		 Hence we will use some other implementation of Applicationcontext.
+Part 3- this is important, its actaully done the same way in TVS. here what we will do that if we dont want to use the @Component annotation.
+		what we can do is we use the @Bean annotation directly. 
+		@Bean - this annotation will directly be responsible that this method is used for creating that particular object/bean for that class.
+				the name or bean id will now be the method name.
