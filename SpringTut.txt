@@ -274,6 +274,9 @@ One more important thing to note is , as now we dont have any bean specification
 will automatically take the id as the smallcase name of that particular class having component annotation.
 or we can change the id by giving the name in component annotation.
 
+@value - we can directly provide the value to any member variable through @Value annotation. 
+		 refer the example if the memeber variable is a collection.
+
 *********************  Using MessageSource To Get Text From Property Files ***********
 
 one of the differences between using an applicationContext instead of bean factory is we can use the messageResource in applicationContext.

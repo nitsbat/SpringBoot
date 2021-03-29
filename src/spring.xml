@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns = "http://www.springframework.org/schema/beans"
-       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
     <context:annotation-config/>
-    <context:component-scan base-package="drawing" />
+    <context:component-scan base-package="drawing"/>
     <bean id="triangle" class="drawing.Triangle" scope="prototype">
         <!--        <property name="type" value="Equilateral"></property>-->
         <!--        <constructor-arg type="java.lang.String" value="Equilateral"></constructor-arg>-->
@@ -44,24 +47,24 @@
     <!--    the "recatngle1" bean is the child bean of the rectangle parent bean and hence will be inheriting-->
     <!--    the property "point1" automatically-->
 
-<!--    <bean id="rectangleAbstract" class="drawing.Rectangle">-->
-<!--        <property name="points">-->
-<!--            <list>-->
-<!--                <bean id="pointC" class="drawing.Point">-->
-<!--                    <property name="x" value="100"/>-->
-<!--                    <property name="y" value="100"/>-->
-<!--                </bean>-->
-<!--                <ref bean="pointA"/>-->
-<!--            </list>-->
-<!--        </property>-->
-<!--    </bean>-->
-<!--    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract">-->
-<!--        <property name="points">-->
-<!--            <list merge="true">-->
-<!--                <ref bean="pointB"/>-->
-<!--            </list>-->
-<!--        </property>-->
-<!--    </bean>-->
+    <!--    <bean id="rectangleAbstract" class="drawing.Rectangle">-->
+    <!--        <property name="points">-->
+    <!--            <list>-->
+    <!--                <bean id="pointC" class="drawing.Point">-->
+    <!--                    <property name="x" value="100"/>-->
+    <!--                    <property name="y" value="100"/>-->
+    <!--                </bean>-->
+    <!--                <ref bean="pointA"/>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+    <!--    <bean id="rectangle1" class="drawing.Rectangle" parent="rectangleAbstract">-->
+    <!--        <property name="points">-->
+    <!--            <list merge="true">-->
+    <!--                <ref bean="pointB"/>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--    </bean>-->
     <!--    so if we have given autowire by names so if the bean id has same names as of member variable then it will inject
             if we have given it byType so irrespective of property name if the type is matching and only single
             variable of that type is presnt in the class then it will automatically inject.
@@ -78,19 +81,19 @@
         <property name="x" value="${Xvalue}"/>
         <property name="y" value="${Yvalue}"/>
     </bean>
-        <bean id="point4" class="drawing.Point">
-            <property name="x" value="15"/>
-            <property name="y" value="5"/>
-        </bean>
+    <bean id="point4" class="drawing.Point">
+        <property name="x" value="15"/>
+        <property name="y" value="5"/>
+    </bean>
 
-<!--   when you will comment the property , the bean will be created but when it will be accesses and-->
-<!--    its property value will be used, at that time it will throw null pointer exception.-->
-<!--    <bean id="circle" class="drawing.Circle">-->
-<!--        <property name="center" ref="pointA"></property>-->
-<!--    </bean>-->
+    <!--   when you will comment the property , the bean will be created but when it will be accesses and-->
+    <!--    its property value will be used, at that time it will throw null pointer exception.-->
+    <!--    <bean id="circle" class="drawing.Circle">-->
+    <!--        <property name="center" ref="pointA"></property>-->
+    <!--    </bean>-->
 
-<!--    this is the postProcessor class used when giving any @Required annotation-->
-<!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />-->
+    <!--    this is the postProcessor class used when giving any @Required annotation-->
+    <!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />-->
 
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames">
@@ -100,11 +103,18 @@
         </property>
     </bean>
 
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" value="properties.config"/>
     </bean>
     <alias name="rectangle" alias="nitin-rectangle"/>
-<!--    <bean class="drawing.ApplicationEventListener" />-->
+    <!--    <bean class="drawing.ApplicationEventListener" />-->
+
+    <util:list list-class="java.util.ArrayList" id="listValue">
+        <value>Omnicircle</value>
+        <value>Circumcircle</value>
+        <value>Incircle</value>
+    </util:list>
+
 </beans>
