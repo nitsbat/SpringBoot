@@ -8,7 +8,12 @@ import org.springframework.context.annotation.Configuration;
 public class JavaConfig {
 
     @Bean
+    public Branch getBranch() {
+        return new Branch();
+    }
+
+    @Bean(name = "studentBean")
     public Student getStudent() {
-        return new Student();
+        return new Student(getBranch());
     }
 }

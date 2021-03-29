@@ -320,3 +320,5 @@ Part 3- this is important, its actaully done the same way in TVS. here what we w
 		what we can do is we use the @Bean annotation directly. 
 		@Bean - this annotation will directly be responsible that this method is used for creating that particular object/bean for that class.
 				the name or bean id will now be the method name.
+Part 4- @ComponentScan is basically used for scanning the component annotation in various packages. Hence we can remove it.
+Part 5 - populating the class with some variable and injecting them.
