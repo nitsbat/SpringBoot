@@ -15,6 +15,7 @@ import java.util.List;
 @Repository("circleId")
 public class Circle implements Shape, ApplicationEventPublisherAware {
 
+    @Value("#{point4}")
     private Point center;
 
     @Value("Nitin")
@@ -45,7 +46,7 @@ public class Circle implements Shape, ApplicationEventPublisherAware {
         return center;
     }
 
-    @Resource(name = "pointB")
+
     public void setCenter(Point center) {
         this.center = center;
     }
