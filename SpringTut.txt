@@ -263,4 +263,14 @@ comes from the message source interface and hence we can just make a memeber var
 and can use the messages.
 For having used the member variable as parameters in the message, just use the placeholder. 
 
+Example is with commit message - Message Source Example.
 
+**************************** Event Handling in Spring ***************************
+
+there are always three parts to event handling in any type of framework.
+first is Event listener which generally listens to a particular published event.
+second is Event Publisher which is basically publishing a event to the application.
+and third is the event itself i.e the event which needs to be published.
+
+Spring provides interfaces like applicationListener,applicationPublisher,applicationEvent for making all these.
+refer the example on the project.

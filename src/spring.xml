@@ -106,4 +106,5 @@
         <property name="locations" value="properties.config"/>
     </bean>
     <alias name="rectangle" alias="nitin-rectangle"/>
+<!--    <bean class="drawing.ApplicationEventListener" />-->
 </beans>
