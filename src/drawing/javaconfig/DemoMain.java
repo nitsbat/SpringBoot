@@ -9,7 +9,7 @@ public class DemoMain {
 
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
 
-        Student student = context.getBean("student", Student.class);
+        Student student = context.getBean("getStudent", Student.class);
 
         student.study();
 

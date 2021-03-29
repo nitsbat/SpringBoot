@@ -1,17 +1,16 @@
 package drawing.javaconfig;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@Component
 public class Student {
 
+    @Autowired
     private Branch branch;
 
+    @Autowired
     private String name;
 
-    public Student(Branch branch, String name) {
-        this.branch = branch;
-        this.name = name;
+    public Student() {
     }
 
     public Branch getBranch() {
