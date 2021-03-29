@@ -1,3 +1,20 @@
+How to learn spring
+
+If you are interested in learning advanced spring concepts, you have the multiple options. Note that there are many spring projects for specific purposes. You may not be able to master on all the projects. Here I am listing down some of the most popular spring frameworks that are most commonly used among the projects.
+
+    Spring Core -This is the core engine for spring framework. Every other spring projects are built on top of this engine. You have to first understand clearly about the Dependency Injection and other concepts to be more successful spring framework developer.
+    Spring Boot - This is the most common for running spring applications. It is very latest one and must be learned by every spring developers. This will be the future way of building and running spring applications.
+    Spring MVC - Spring MVC is the most popular web application framework in Java. If you are developing web applications using spring, then you have to learn Spring MVC.
+    Spring Data JPA - Excellent framework for developing database applications. You will fall in love if you start using Spring Data. It is that much eacy to persist data using SPring Data framework.
+    Spring Security - Spring Security is one of the most widely used for security purposes.
+    Spring Cloud - For developing cloud applications
+    Spring Batch - If you have an batch job, this framework can be used.
+
+Spring Core - basics and DI -Done
+			  AOP - Inprogress
+
+********************************************************************************************************************************************
+
 D in SOLID principle stands for Dependency Inversion
 It states that the high level modules should not depend upon the low level modules. the decoupling of software modules should be there.
 For example in the below code,
@@ -235,7 +252,7 @@ Remember that you need to add the xml namespace also. otherwise it will say that
 
 there are some standard annotations.
 
-@Resourcce  - not specific to Spring, its from javax library. This annotation does dependency injection by name. 
+@Resource  - not specific to Spring, its from javax library. This annotation does dependency injection by name. 
 			  just give value and create a bean with the same bean id. and if value not given , it gonna see if the name of 
 			  member variable is same to any of the bean id. 
 
@@ -251,6 +268,11 @@ similarly we have stereotype annotations like
 @Service - it works in a similar manner like component, makes the bean of that class but it is specific if we have a service class, gives a             good 	    nomenclature. component is sort of generic annotation for creating bean.
 @Controller - similar to the controller class of MVC.
 @Repository - similar to a data layer.
+
+One more important thing to note is , as now we dont have any bean specifications in the spring.xml and we have made the bean through
+@Component , hence when we do get bean we give the id but now there is no id, so always remember that now the spring container
+will automatically take the id as the smallcase name of that particular class having component annotation.
+or we can change the id by giving the name in component annotation.
 
 *********************  Using MessageSource To Get Text From Property Files ***********
 

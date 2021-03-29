@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
-@Repository
+@Repository("circleId")
 public class Circle implements Shape, ApplicationEventPublisherAware {
 
     private Point center;
