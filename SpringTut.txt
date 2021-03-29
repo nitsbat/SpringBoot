@@ -274,3 +274,8 @@ and third is the event itself i.e the event which needs to be published.
 
 Spring provides interfaces like applicationListener,applicationPublisher,applicationEvent for making all these.
 refer the example on the project.
+For creating a event we have to extend the ApplicationEvent with the mainEvent and then can manipulate the funstionality.
+Also for event publisher what spring actually does that it wants us to code through interfaces. So basically we create a private member
+variable for ApllicationEventPublisher and just call the publishEvent in any method. 
+But now to populate with the instance if this publisher we have to create an object for it. So what we can do is like we have
+ApllicationEventPublisherAware which provides us the ApplicationEventPublisher. we just have to set or populate our publisher with this.

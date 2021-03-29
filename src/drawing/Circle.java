@@ -1,6 +1,8 @@
 package drawing;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Repository;
 
@@ -9,9 +11,12 @@ import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
 @Repository
-public class Circle implements Shape {
+public class Circle implements Shape, ApplicationEventPublisherAware {
 
     private Point center;
+
+//    @Autowired
+    private ApplicationEventPublisher applicationEventPublisher;
 
     @Autowired
     private MessageSource messageSource;
@@ -29,8 +34,8 @@ public class Circle implements Shape {
     public void draw() {
         System.out.println(messageSource.getMessage("starting", null, "Exception", null));
         System.out.println(messageSource.getMessage("drawing.circle",
-                new Object[]{center.getX(),center.getY()}, "circle default", null));
-        System.out.println(messageSource.getMessage("circle.draw", null, "Circle", null));
+                new Object[]{center.getX(), center.getY()}, "circle default", null));
+        applicationEventPublisher.publishEvent(new DrawEvent(this));
     }
 
     @PostConstruct
@@ -49,5 +54,10 @@ public class Circle implements Shape {
 
     public void setMessageSource(MessageSource messageSource) {
         this.messageSource = messageSource;
+    }
+
+    @Override
+    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 }
