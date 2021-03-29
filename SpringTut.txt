@@ -306,3 +306,13 @@ Also for event publisher what spring actually does that it wants us to code thro
 variable for ApllicationEventPublisher and just call the publishEvent in any method. 
 But now to populate with the instance if this publisher we have to create an object for it. So what we can do is like we have
 ApllicationEventPublisherAware which provides us the ApplicationEventPublisher. we just have to set or populate our publisher with this.
+
+
+********************** Removing the whole spring.xml file and replace with configuration and annotations ***************
+
+Part 1 - Basic structure with spring.xml file
+Part 2 - All the configuration in spring.xml can be moved to a java class and just give it @Configuration annotation.
+		 this annotation will depict that all my settings and configurations which i have done in spring.xml is here now.
+		 When we have to configure the base packages for that internal component searching tag, we can use the @ComponentScan annotation.
+		 Also if we observe in our main we were sing classXMLcontext for making application context but now we dont have spring.xml.
+		 Hence we will use some other implementation of Applicationcontext.
